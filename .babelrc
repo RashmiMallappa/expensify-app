@@ -1,0 +1,11 @@
+//Json file - contains all arguments that can be passed in command line
+{
+    "presets":[
+        "env",
+        "react"
+    ],
+    "plugins":[
+        "transform-class-properties",
+        "transform-object-rest-spread"
+    ]
+}
