@@ -9,7 +9,7 @@ module.exports = (env)=>{
     return {
         entry:'./src/app.js',
         output:{                                          //configuring webpack
-            path:path.join(__dirname,'public'),
+            path:path.join(__dirname,'public','dist'),
             filename:'bundle.js'
         },
         module:{                                          //setting up babel with webpack
@@ -43,7 +43,8 @@ module.exports = (env)=>{
         devtool: isProduction ? 'source-map' : 'inline-source-map',           //replacing live-server with webpack-dev-server - this stores bundle.js in memory and doesn't create physical copy in the folder.
         devServer:{
             contentBase:path.join(__dirname,'public'),
-            historyApiFallback:true                      //tells dev server that routing is handled by client code
+            historyApiFallback:true,                      //tells dev server that routing is handled by client code
+            publicPath: '/dist/'
         }
     }
 }
